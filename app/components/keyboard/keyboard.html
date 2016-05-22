@@ -1,0 +1,6 @@
+<div class="keyboard">
+    <span *ngFor="let key of qwerty">
+        <br *ngIf="key==='A' || key==='Z'"/>
+        <div class="key" (click)="type(key)">{{key}}</div>
+    </span>
+</div>

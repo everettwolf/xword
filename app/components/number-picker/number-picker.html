@@ -1,0 +1,12 @@
+<div class="number-picker-container">
+    <div class="number-picker">
+        <i class="picker" (click)="decrement()">&#8722;</i>
+        <input [(ngModel)]="number.value"/>
+        <i class="picker" (click)="increment()">&#43;</i>
+    </div>
+    <div *ngIf="!!errorMessage" class="fade in picker-alert">
+        <i (click)="errorMessage=null" class="picker-close">&times;</i>
+        {{errorMessage}}
+    </div>
+</div>
+

@@ -1,0 +1,64 @@
+.xword-container {
+    text-align: center;
+}
+
+.xword-puzzle {
+    display: inline-block;
+    border:solid 1px red;
+}
+
+.square {
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-size: 16px;
+    border-style: solid;
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    background-color: white;
+}
+
+.square.inner {
+    border-style: solid;
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+}
+
+.square.left {
+    border-style: solid;
+    border-left-width: 1px;
+}
+
+.square.top {
+    border-style: solid;
+    border-top-width: 1px;
+}
+
+.square.block {
+    background-color: black;
+}
+
+.square.shaded {
+    background: #ccc;
+}
+
+.square.clear {
+    background: #fff;
+}
+
+.square.selected {
+    background: blue;
+    color: white;
+}
+
+

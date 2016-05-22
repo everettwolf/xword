@@ -1,0 +1,66 @@
+.number-picker-container {
+    display: inline-block;
+}
+
+.number-picker-container .number-picker {
+    float: left;
+    border: solid 1px #607D8B;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    min-width: 87px;
+}
+
+.number-picker input {
+    float: left;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 6px;
+    border: 0;
+}
+
+.number-picker .picker {
+    float: left;
+    color: #fff;
+    background-color: #607D8B;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.number-picker-container .picker-alert {
+    float: left;
+    border: solid 1px #607D8B;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.picker-alert .picker-close {
+    color: #000;
+    float: right;
+    margin-left: 5px;
+    text-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.picker-alert .picker-close:hover {
+    opacity: .5;
+}

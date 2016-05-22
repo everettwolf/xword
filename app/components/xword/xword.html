@@ -1,0 +1,45 @@
+<div class="container-fixed xword-container">
+    <div class="row">
+        <div class="col-xs-2">FUCK</div>
+        <div class="col-xs-2" style="border: solid 1px;">
+            <div>Grid Size:</div>
+            <div>
+                <number-picker
+                        [(max)]="maxGridSize"
+                        [(min)]="minGridSize"
+                        [(number)]="size"
+                        (click)="resizeGrid()">
+                </number-picker>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            Choose Symmetry:
+        </div>
+        <div class="col-xs-2">
+            Build Grid:
+        </div>
+        <div class="col-xs-2">
+            Enter Seeds:
+        </div>
+        <div class="col-xs-2">FUCK</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">FUCK</div>
+        <div class="col-xs-8">
+            <div class="xword-puzzle">
+                <div class="xword-row" *ngFor="let row of grid">
+                    <div
+                            *ngFor="let col of grid"
+                            class="square"
+                            [class.selected]="isSelected(row, col)"
+                            [class.top]="row==1"
+                            [class.left]="col==1"
+                            (click)="setSelectedCell(row,col)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2">FUCK</div>
+    </div>
+    <keyboard *ngIf="showKeyboard" [(square)]="selectedSquare"></keyboard>
+</div>
