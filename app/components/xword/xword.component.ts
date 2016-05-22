@@ -13,7 +13,7 @@ import {PickerMin} from "../number-picker/picker-number";
     styleUrls: ['app/components/xword/xword.css'],
     directives: [NumberPickerComponent, KeyboardComponent]
 })
-export class AppComponent {
+export class XwordComponent {
     size:PickerNumber;
     maxGridSize:PickerMax;
     minGridSize:PickerMin;
