@@ -3,3 +3,5 @@ before_script:
   - npm install
 script:
   - npm rebuild
+after_script:
+  - npm test
