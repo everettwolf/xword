@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {Square} from './square';
 import {NumberPickerComponent} from "../number-picker/number-picker-component";
-import {KeyboardComponent} from "../keyboard/keyboard-component";
+import {KeyboardComponent} from "../keyboard/keyboard.component";
 import {PickerNumber} from "../number-picker/picker-number";
 import {PickerMax} from "../number-picker/picker-number";
 import {PickerMin} from "../number-picker/picker-number";

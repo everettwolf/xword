@@ -1,5 +1,8 @@
 (function (global) {
 
+    // ENV
+    global.ENV = global.ENV || 'development';
+
     // map tells the System loader where to look for things
     var map = {
         'app': 'app', // 'dist',
@@ -22,9 +25,7 @@
         '@angular/http',
         '@angular/platform-browser',
         '@angular/platform-browser-dynamic',
-        '@angular/router-deprecated',
-        '@angular/testing',
-        '@angular/upgrade'
+        '@angular/router'
     ];
 
     // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }

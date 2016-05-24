@@ -1,6 +1,13 @@
 import {bootstrap}    from '@angular/platform-browser-dynamic';
-import {XwordComponent} from './components/xword/xword.component';
+import {enableProdMode} from '@angular/core';
+import{ROUTER_PROVIDERS} from '@angular/router';
+import {AppComponent} from './app.component';
 
+declare var ENV:string;
+
+if (ENV === 'production') {
+    enableProdMode();
+}
 
 //noinspection TypeScriptValidateTypes
-bootstrap(XwordComponent);
+bootstrap(AppComponent, [ROUTER_PROVIDERS]);
