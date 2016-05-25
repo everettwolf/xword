@@ -6,7 +6,7 @@ module.exports = function (config) {
     config.set({
         basePath: '',
         frameworks: ['jasmine'],
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
         //plugins: [
         //    require('karma-jasmine'),
         //    require('karma-chrome-launcher'),
@@ -25,6 +25,10 @@ module.exports = function (config) {
         files: [
             // System.js for module loading
             'node_modules/systemjs/dist/system.src.js',
+
+            'node_modules/traceur/bin/traceur-runtime.js',
+            'node_modules/es6-shim/es6-shim.min.js',
+            'node_modules/systemjs/dist/system-polyfills.js',
 
             // Polyfills
             'node_modules/core-js/client/shim.js',
