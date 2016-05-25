@@ -3,4 +3,4 @@
 [![Dependency Status](https://david-dm.org/everettwolf/xword.svg)](https://david-dm.org/everettwolf/xword)
 [![devDependency Status](https://david-dm.org/everettwolf/xword/dev-status.svg)](https://david-dm.org/everettwolf/xword#info=devDependencies)
 
-# xword
+# Crossword Constructor
