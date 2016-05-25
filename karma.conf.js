@@ -1,16 +1,18 @@
-module.exports = function(config) {
+module.exports = function (config) {
 
-    var appBase   = 'app/';      // transpiled app JS files
-    var appAssets ='/base/app/'; // component assets fetched by Angular's compiler
+    var appBase = 'app/';      // transpiled app JS files
+    var appAssets = '/base/app/'; // component assets fetched by Angular's compiler
 
     config.set({
         basePath: '',
         frameworks: ['jasmine'],
-        plugins: [
-            require('karma-jasmine'),
-            require('karma-chrome-launcher'),
-            require('karma-htmlfile-reporter')
-        ],
+        browsers: ['Chrome'],
+        //plugins: [
+        //    require('karma-jasmine'),
+        //    require('karma-chrome-launcher'),
+        //    require('karma-htmlfile-reporter'),
+        //    require('karma-coverage')
+        //],
 
         customLaunchers: {
             // From the CLI. Not used here but interesting
@@ -35,8 +37,8 @@ module.exports = function(config) {
             'node_modules/zone.js/dist/fake-async-test.js',
 
             // RxJs.
-            { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
-            { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
+            {pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false},
+            {pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false},
 
             // Angular 2 itself and the testing library
             {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
@@ -65,24 +67,32 @@ module.exports = function(config) {
         },
 
         exclude: [],
-        preprocessors: {},
-        reporters: ['progress', 'html'],
-
-        // HtmlReporter configuration
-        htmlReporter: {
-            // Open this file to see results in browser
-            outputFile: '_test-output/tests.html',
-
-            // Optional
-            pageTitle: 'Unit Tests',
-            subPageTitle: __dirname
+        preprocessors: {'app/**/*.js': ['coverage']},
+        reporters: ['progress', 'coverage', 'karma-remap-istanbul'],
+        coverageReporter: {
+            dir: 'report/',
+            reporters: [{
+                type: 'json',
+                subdir: 'report-json',
+                file: 'coverage-final.json'
+            }]
         },
-
+        remapIstanbulReporter: {
+            src: 'report/report-json/coverage-final.json',
+            reports: {
+                'lcovonly': 'report/remap/lcov.info',
+                'json': 'report/remap/coverage.json',
+                'html': 'report/remap/html-report',
+                'text-summary': 'report/remap/text-summary.txt'
+            },
+            timeoutNotCreated: 1000,
+            timeoutNoMoreFiles: 1000
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
-        browsers: ['Chrome'],
-        singleRun: false
+        autoWatch: false,
+
+        singleRun: true
     })
 }

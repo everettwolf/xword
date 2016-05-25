@@ -2,4 +2,6 @@ language: node_js
 before_script:
   - npm install
 script:
-  - npm rebuild
+  - npm test
+after_script:
+  - npm run-script coveralls
