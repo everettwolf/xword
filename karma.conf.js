@@ -6,13 +6,15 @@ module.exports = function (config) {
     config.set({
         basePath: '',
         frameworks: ['jasmine'],
+
         browsers: ['PhantomJS'],
-        //plugins: [
-        //    require('karma-jasmine'),
-        //    require('karma-chrome-launcher'),
-        //    require('karma-htmlfile-reporter'),
-        //    require('karma-coverage')
-        //],
+
+        plugins: [
+            'karma-phantomjs-launcher',
+            'karma-jasmine',
+            'karma-coverage',
+            'karma-remap-istanbul'
+        ],
 
         customLaunchers: {
             // From the CLI. Not used here but interesting
@@ -74,14 +76,14 @@ module.exports = function (config) {
         preprocessors: {'app/**/*.js': ['coverage']},
         reporters: ['progress', 'coverage', 'karma-remap-istanbul'],
         coverageReporter: {
-            dir: 'report/',
-            reporters: [{
-                type: 'json',
-                subdir: 'report-json',
-                file: 'coverage-final.json'
-            }]
+            type: 'json',
+            dir: 'report',
+            subdir: 'report-json',
+            file: 'coverage-final.json'
+
         },
         remapIstanbulReporter: {
+            basePath: './',
             src: 'report/report-json/coverage-final.json',
             reports: {
                 'lcovonly': 'report/remap/lcov.info',
