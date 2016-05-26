@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Crossword creation",
   "scripts": {
+    "clean": "rm -rf ./node_modules",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "docker-build": "docker build -t ng2-quickstart .",
     "docker": "npm run docker-build && docker run -it --rm -p 3000:3000 -p 3001:3001 ng2-quickstart",
@@ -15,7 +16,8 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "webdriver:update": "webdriver-manager update",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
+    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info",
+    "list": "ls -l"
   },
   "keywords": [],
   "author": "",
@@ -53,8 +55,7 @@
     "lite-server": "^2.2.0",
     "lodash": "^4.11.1",
     "ngstarter-systemjs-tasks": "^1.0.0-rc.0",
-    "phantomjs": "^2.1.7",
-    "phantomjs2": "^2.2.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "protractor": "^3.3.0",
     "remap-istanbul": "^0.6.4",
     "rimraf": "^2.5.2",

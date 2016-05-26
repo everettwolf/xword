@@ -4,4 +4,5 @@ before_script:
 script:
   - npm test
 after_script:
+  - npm run list
   - npm run coveralls
