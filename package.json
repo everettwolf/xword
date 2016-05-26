@@ -10,7 +10,7 @@
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "postinstall": "typings install",
-    "test": "karma start karma.conf.js --singleRun",
+    "test": "tsc && karma start karma.conf.js --singleRun",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
