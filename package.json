@@ -63,5 +63,8 @@
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
   },
-  "repository": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/everettwolf/xword.git"
+  }
 }
