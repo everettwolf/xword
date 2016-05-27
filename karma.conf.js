@@ -92,8 +92,8 @@ module.exports = function (config) {
                     'html': 'report/remap/html-report',
                     'text-summary': 'report/remap/text-summary.txt'
                 },
-                timeoutNotCreated: 1000,
-                timeoutNoMoreFiles: 1000
+                timeoutNotCreated: 20000,
+                timeoutNoMoreFiles: 20000
             },
 
             port: 9876,
