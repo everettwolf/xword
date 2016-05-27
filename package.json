@@ -17,7 +17,8 @@
     "typings": "typings",
     "webdriver:update": "webdriver-manager update",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info",
-    "list": "ls -l ./report"
+    "list": "ls -l ./report",
+    "list2": "ls -l ./"
   },
   "keywords": [],
   "author": "",
