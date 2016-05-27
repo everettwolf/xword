@@ -13,7 +13,7 @@ module.exports = function (config) {
                 require('karma-jasmine'),
                 require('karma-phantomjs-launcher'),
                 require('karma-coverage'),
-                require('karma-remap-istanbul')
+                require('remap-istanbul')
             ],
 
             customLaunchers: {
@@ -75,7 +75,7 @@ module.exports = function (config) {
             exclude: [],
             preprocessors: {'app/**/!(*spec).js': ['coverage']},
 
-            reporters: ['progress', 'coverage', 'karma-remap-istanbul'],
+            reporters: ['progress', 'coverage'],
             coverageReporter: {
                 dir: 'report/',
                 reporters: [{
@@ -83,17 +83,6 @@ module.exports = function (config) {
                     subdir: 'report-json',
                     file: 'coverage-final.json'
                 }]
-            },
-            remapIstanbulReporter: {
-                src: 'report/report-json/coverage-final.json',
-                reports: {
-                    'lcovonly': 'report/remap/lcov.info',
-                    'json': 'report/remap/coverage.json',
-                    'html': 'report/remap/html-report',
-                    'text-summary': 'report/remap/text-summary.txt'
-                },
-                timeoutNotCreated: 20000,
-                timeoutNoMoreFiles: 20000
             },
 
             port: 9876,

@@ -9,5 +9,4 @@ node_js:
 script:
   - npm test
 after_script:
-  - npm run list
   - npm run coveralls
